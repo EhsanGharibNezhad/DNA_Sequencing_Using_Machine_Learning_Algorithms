@@ -1,4 +1,4 @@
-# <b> # DNA Sequencing Using Machine Learning Algorithms
+ <b> # DNA Sequencing Using Machine Learning Algorithms
   
 ###  Investigator: Ehsan Gharib-Nezhad
 
