@@ -95,13 +95,9 @@ In this project, ~XXX DNA sequences from ---, ---, and --- were utilized from th
 
 |feature name|data type|Description|
 |---|---|---|
-| selftext |*object*|Original Reddit posts with no text processing|
-| subreddit|*object*|Subreddit category: r\Covid19Positive and r\PandemicPreps|
-| created_utc|*int64*|Reddit posting date|
-| author|*object*|Author ID|
-| num_comments|*int64*|Number of comments/reply to that post|
-| post|*object*| Reddit post after text precessing with normal/unstemmed words|
-| token|*object*| Reddit post after text precessing with word stemming|
+| Sequence |*object*|Represents the DNA sequence of A, T, G, C |
+| Class|*integer*|0 :  G protein-coupled receptors (GPCRs)|
+|  |*integer*|1 :  Tyrosine kinase|
 
 ---
 ---
