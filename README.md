@@ -90,19 +90,19 @@ In this project, ~XXX DNA sequences from ---, ---, and --- were utilized from th
 
 ---
 ---
-# <a id = 'ddict'>Data <b>Dictionary</b></a>
+# <a id = 'ddict'>Dataset <b>Dictionary</b></a>
 
 
 |feature name|data type| possible values | corresponding gene| description | reference|
-|---|---|---|---|---|
+|---|---|---|---|---|---|
 | Sequence |*object*| A, T, G, C | Represents the DNA sequence| --- |---|
-| Class|*integer*|0 |  G protein-coupled receptors (GPCRs)| membrane receptors |
+| Class|*integer*|0 |  G protein-coupled receptors (GPCRs)| G-protein-coupled receptors (GPCRs) are the largest and most diverse group of membrane receptors in eukaryotes. These cell surface receptors act like an inbox for messages in the form of light energy, peptides, lipids, sugars, and proteins| [[link]](https://www.nature.com/scitable/topicpage/gpcr-14047471/) |
 |  |*integer*|1 |  Tyrosine kinase| a large multigene family with particular relevance to many human diseases, including cancer|[[link]](https://www.nature.com/articles/1203957) |
 |  |*integer*|2 |  Protein tyrosine phosphatases| Protein tyrosine phosphatases are a group of enzymes that remove phosphate groups from phosphorylated tyrosine residues on proteins| [[link]](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiI9omSsfP1AhVeJ0QIHbQbAF8QFnoECAcQAw&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FProtein_tyrosine_phosphatase&usg=AOvVaw26Gc_GqosG5hJnZu1uf4cy)|
-|  |*integer*|3 |  Protein tyrosine phosphatases (PTPs)|
-|  |*integer*|4 |  Aminoacyl-tRNA synthetases (AARSs)|
-|  |*integer*|5 |  Ion channels|
-|  |*integer*|6 |  Transcription Factor|
+|  |*integer*|3 |  Protein tyrosine phosphatases (PTPs)| to control signalling pathways that underlie a broad spectrum of fundamental physiological processes | [[link]](https://pubmed.ncbi.nlm.nih.gov/17057753/)|
+|  |*integer*|4 |  Aminoacyl-tRNA synthetases (AARSs)| responsible for attaching amino acid residues to their cognate tRNA molecules, which is the first step in the protein synthesis | [[link]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC29805/)|
+|  |*integer*|5 |  Ion channels| Ion channels are the pathways for the passive transport of various inorganic ions across a membrane| [[ref]](https://www.frontiersin.org/articles/10.3389/fgene.2019.00399/full) |
+|  |*integer*|6 |  Transcription Factor| Transcription factors are proteins involved in the process of converting, or transcribing, DNA into RNA | [[link]](https://www.nature.com/scitable/definition/transcription-factor-167/)|
 
 ---
 ---
