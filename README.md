@@ -93,11 +93,16 @@ In this project, ~XXX DNA sequences from ---, ---, and --- were utilized from th
 # <a id = 'ddict'>Data <b>Dictionary</b></a>
 
 
-|feature name|data type|Description|
-|---|---|---|
-| Sequence |*object*|Represents the DNA sequence of A, T, G, C |
-| Class|*integer*|0 :  G protein-coupled receptors (GPCRs)|
-|  |*integer*|1 :  Tyrosine kinase|
+|feature name|data type| possible values | corresponding gene| description | reference|
+|---|---|---|---|---|
+| Sequence |*object*| A, T, G, C | Represents the DNA sequence| --- |---|
+| Class|*integer*|0 |  G protein-coupled receptors (GPCRs)| membrane receptors |
+|  |*integer*|1 |  Tyrosine kinase| a large multigene family with particular relevance to many human diseases, including cancer|[[link]](https://www.nature.com/articles/1203957) |
+|  |*integer*|2 |  Protein tyrosine phosphatases| Protein tyrosine phosphatases are a group of enzymes that remove phosphate groups from phosphorylated tyrosine residues on proteins| [[link]](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiI9omSsfP1AhVeJ0QIHbQbAF8QFnoECAcQAw&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FProtein_tyrosine_phosphatase&usg=AOvVaw26Gc_GqosG5hJnZu1uf4cy)|
+|  |*integer*|3 |  Protein tyrosine phosphatases (PTPs)|
+|  |*integer*|4 |  Aminoacyl-tRNA synthetases (AARSs)|
+|  |*integer*|5 |  Ion channels|
+|  |*integer*|6 |  Transcription Factor|
 
 ---
 ---
