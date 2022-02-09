@@ -106,8 +106,20 @@ In this project, ~XXX DNA sequences from ---, ---, and --- were utilized from th
 ---
 ---
 # <a id = 'Background'>Background</a> 
-## 1. <a id = 'api'> Data Scarpping: Application Programming Interface</a> 
-The pushshift.io Reddit API was designed and created by the /r/datasets mod team to help provide enhanced functionality and search capabilities for searching Reddit comments and submissions [[ref]](https://github.com/pushshift/api).
+## 1. <a id = 'api'> DNA sequencing </a> 
+DNA (Deoxyribonucleic acid) sequencing is the process of determining the nucleic acid sequence or the order of nucleotides in DNA molecule. In fact, it includes experimental techniques to determine the order of the four bases: Adenine (A), guanine (G), cytosine (C), and thymine (T). DNA sequencing is a crucial technique in biology because it is fundamental step in better understading the root of many genetic deseaise. The following figure illustrate the main concept of DNA sequecing as well as some of its importnat applications [[ref]](https://www.nist.gov/patents/nucleic-acid-sequencer-electrically-determining-sequence-nitrogenous-bases-single-stranded). 
+
+
+<br></br>
+<img src="./plots/DNA_Sequencing_Concept.png" alt="drawing" width="800"/>
+<br></br>
+
+
+
+# ============================================================
+# ============================================================
+# ============================================================
+# ============================================================
 
 ## 2. <a id = 'Text_Normalization'>Text Normalization</a> 
 Text preprocessing and normalization is a crucial step in Natural Language Processing (NLP) and it means converting the text into the standard form. Examples of text preprossessing include [[ref]](https://towardsdatascience.com/text-preprocessing-for-data-scientist-3d2419c8199d):
