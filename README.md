@@ -93,9 +93,9 @@ In this project, ~XXX DNA sequences from ---, ---, and --- were utilized from th
 # <a id = 'ddict'>Dataset <b>Dictionary</b></a>
 
 
-|feature name|data type| possible values | corresponding gene| description | reference|
+|feature name|data type| possible values | represents| description | reference|
 |---|---|---|---|---|---|
-| Sequence |*object*| A, T, G, C | Represents the DNA sequence| --- |---|
+| Sequence |*object*| A, T, G, C | DNA sequence|    |   |
 | Class|*integer*|0 |  G protein-coupled receptors (GPCRs)| G-protein-coupled receptors (GPCRs) are the largest and most diverse group of membrane receptors in eukaryotes. These cell surface receptors act like an inbox for messages in the form of light energy, peptides, lipids, sugars, and proteins| [[link]](https://www.nature.com/scitable/topicpage/gpcr-14047471/) |
 |  |*integer*|1 |  Tyrosine kinase| a large multigene family with particular relevance to many human diseases, including cancer|[[link]](https://www.nature.com/articles/1203957) |
 |  |*integer*|2 |  Protein tyrosine phosphatases| Protein tyrosine phosphatases are a group of enzymes that remove phosphate groups from phosphorylated tyrosine residues on proteins| [[link]](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiI9omSsfP1AhVeJ0QIHbQbAF8QFnoECAcQAw&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FProtein_tyrosine_phosphatase&usg=AOvVaw26Gc_GqosG5hJnZu1uf4cy)|
