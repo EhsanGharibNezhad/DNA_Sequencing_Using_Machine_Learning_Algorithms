@@ -113,6 +113,39 @@ DNA (Deoxyribonucleic acid) sequencing is the process of determining the nucleic
 <br></br>
 
 
+---
+# <a id = 'ModelingMethodology'>Statistical Models: Methodology and Concepts</b></a>
+
+## <a id = '1Multiclassclassification'>1. Multiclass classification</b></a>
+
+Multiclass classification is a common problem in machine learning and includes targets with more than two classes. In case that the target has two classes, then it is named binary classification. In the following, I will provide background information about the classification methodology:
+1. One-Vs-Rest (OvR)
+2. One-Vs-One (i.e., OvO)
+
+![image](/image/multiclassification_concept.png)
+
+
+## <a id = 'RandomForest'>2. Random Forest</b></a>
+A random forest is a supervised machine learning algorithm and is a part of ensemble methods. It is known for having lower overfitting issues than common decision trees because it creates a large ensemble of bootstrap trees and aggregates them. In this blog, I will discuss the fundamental backgrounds to better understand both Random Forest Classifiers and regressors.
+
+In the bagging technique, all features get selected but the number of observations (or rows in the dataset) is different. Therefore, there is still some correlation between the bootstrap trees which results in high variance. Random Forest breaks this correlation by randomly selecting the features and not having all of them in all decision trees. Hence, Random Forest can be represented as a supervised machine learning algorithm that uses an enhanced version of the Bagging technique to create an ensemble of decision trees with low correlation.
+
+
+![image](/image/RandomForest_concept.png)
+
+
+## <a id = 'NeuralNetworks'>3. Neural Networks</b></a>
+
+Dendrites, axons, cell body might not be that familiar terms for everyone; however, the complexity of the neural networks in the brain could be a reasonable naive start to understanding the complexity of teaching a computer to solve problems. Here in this figure 4, the analogy between the signal transferring process and the deep neural network is depicted. 
+
+*"The idea is that the synaptic strengths (the weights w) are learnable and control the strength of influence ... dendrites carry the signal to the cell body where they all get summed. If the final sum is above a certain threshold, the neuron can fire, sending a spike along its axon. In the computational model, we assume that the precise timings of the spikes do not matter and that only the frequency of the firing communicates information. Based on this rate code interpretation, we model the firing rate of the neuron with an activation function f."* - CS231-Stanford
+
+![image](/image/fnn_concept.png)
+
+
+---
+
+
 
 # ============================================================
 # ============================================================
