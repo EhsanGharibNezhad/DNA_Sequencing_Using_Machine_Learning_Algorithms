@@ -14,13 +14,10 @@
 
 <br></br>
 # <a id = 'ProblemStatement'>Problem Statement</b></a>
-High-throughput Next Generation Sequencing has played a crucial role in broadening our understanding of biology. Understanding the limitation and accuracy of the recorded data, however, is challening step as the interpretation of human gunume relies on its accuracy. Traditional Machine learning-based tools as well as the deep learning neural network could provide an important means to rigriously vet the sequencing results and leverage the accuracy of the sequencing genomes and
-transcriptomes. Critically speaking, .....
-In this project, ~XXX DNA sequences from ---, ---, and --- were utilized from the XXXX data [Covid19Positive](https://www.reddit.com/r/COVID19positive/) and ~2,300 posts from the subreddit [PandemicPreps](https://www.reddit.com/r/PandemicPreps/) ......
-
+High-throughput Next Generation Sequencing has played a crucial role in broadening our understanding of biology. Understanding the limitation and accuracy of the recorded data, however, is challening step as the interpretation of human genome relies on its accuracy. Traditional Machine learning-based tools as well as the deep learning neural network could provide an important means to rigriously vet the sequencing results and leverage the accuracy of the sequencing genomes and
+transcriptomes. Critically speaking, machine learning provides powerful statistical tools to better understand the accuracy of the DNA sequencing. In this project, 4380 human DNA sequences and 7 family genes were employed to train and test a set of models using multiclass classification technique with traditional machien learning algorithiums including KNN, Randon Forest, SVM. Then, deep neural networks were generated with opimized architacture in order to boost the classification accuracy. The main objective of this project is to accuratly classify the human family genes given a set of DNA sequences.
 
 ---
-
 <br></br>
 # <a id = 'Content'> Content </b></a>
 
