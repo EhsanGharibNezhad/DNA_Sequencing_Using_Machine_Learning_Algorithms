@@ -14,13 +14,10 @@
 
 <br></br>
 # <a id = 'ProblemStatement'>Problem Statement</b></a>
-High-throughput Next Generation Sequencing has played a crucial role in broadening our understanding of biology. Understanding the limitation and accuracy of the recorded data, however, is challening step as the interpretation of human gunume relies on its accuracy. Traditional Machine learning-based tools as well as the deep learning neural network could provide an important means to rigriously vet the sequencing results and leverage the accuracy of the sequencing genomes and
-transcriptomes. Critically speaking, .....
-In this project, ~XXX DNA sequences from ---, ---, and --- were utilized from the XXXX data [Covid19Positive](https://www.reddit.com/r/COVID19positive/) and ~2,300 posts from the subreddit [PandemicPreps](https://www.reddit.com/r/PandemicPreps/) ......
-
+High-throughput Next Generation Sequencing has played a crucial role in broadening our understanding of biology. Understanding the limitation and accuracy of the recorded data, however, is challening step as the interpretation of human genome relies on its accuracy. Traditional Machine learning-based tools as well as the deep learning neural network could provide an important means to rigriously vet the sequencing results and leverage the accuracy of the sequencing genomes and
+transcriptomes. Critically speaking, machine learning provides powerful statistical tools to better understand the accuracy of the DNA sequencing. In this project, 4380 human DNA sequences and 7 family genes were employed to train and test a set of models using multiclass classification technique with traditional machien learning algorithiums including KNN, Randon Forest, SVM. Then, deep neural networks were generated with opimized architacture in order to boost the classification accuracy. The main objective of this project is to accuratly classify the human family genes given a set of DNA sequences.
 
 ---
-
 <br></br>
 # <a id = 'Content'> Content </b></a>
 
@@ -93,9 +90,9 @@ In this project, ~XXX DNA sequences from ---, ---, and --- were utilized from th
 # <a id = 'ddict'>Dataset <b>Dictionary</b></a>
 
 
-|feature name|data type| possible values | corresponding gene| description | reference|
+|feature name|data type| possible values | represents| description | reference|
 |---|---|---|---|---|---|
-| Sequence |*object*| A, T, G, C | Represents the DNA sequence| --- |---|
+| Sequence |*object*| A, T, G, C | DNA sequence|    |   |
 | Class|*integer*|0 |  G protein-coupled receptors (GPCRs)| G-protein-coupled receptors (GPCRs) are the largest and most diverse group of membrane receptors in eukaryotes. These cell surface receptors act like an inbox for messages in the form of light energy, peptides, lipids, sugars, and proteins| [[link]](https://www.nature.com/scitable/topicpage/gpcr-14047471/) |
 |  |*integer*|1 |  Tyrosine kinase| a large multigene family with particular relevance to many human diseases, including cancer|[[link]](https://www.nature.com/articles/1203957) |
 |  |*integer*|2 |  Protein tyrosine phosphatases| Protein tyrosine phosphatases are a group of enzymes that remove phosphate groups from phosphorylated tyrosine residues on proteins| [[link]](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiI9omSsfP1AhVeJ0QIHbQbAF8QFnoECAcQAw&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FProtein_tyrosine_phosphatase&usg=AOvVaw26Gc_GqosG5hJnZu1uf4cy)|
