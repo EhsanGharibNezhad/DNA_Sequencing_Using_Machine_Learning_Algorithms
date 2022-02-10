@@ -3,6 +3,7 @@
 # MY IGNORE COMMANTS
 *.key
 datasets/
+outputs/
 
 ###################
 *.com
