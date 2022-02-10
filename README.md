@@ -122,7 +122,7 @@ Multiclass classification is a common problem in machine learning and includes t
 1. One-Vs-Rest (OvR)
 2. One-Vs-One (i.e., OvO)
 
-![image](/image/multiclassification_concept.png)
+![image](/plots/multiclassification_concept.png)
 
 
 ## <a id = 'RandomForest'>2. Random Forest</b></a>
@@ -131,7 +131,7 @@ A random forest is a supervised machine learning algorithm and is a part of ense
 In the bagging technique, all features get selected but the number of observations (or rows in the dataset) is different. Therefore, there is still some correlation between the bootstrap trees which results in high variance. Random Forest breaks this correlation by randomly selecting the features and not having all of them in all decision trees. Hence, Random Forest can be represented as a supervised machine learning algorithm that uses an enhanced version of the Bagging technique to create an ensemble of decision trees with low correlation.
 
 
-![image](/image/RandomForest_concept.png)
+![image](/plots/RandomForest_concept.png)
 
 
 ## <a id = 'NeuralNetworks'>3. Neural Networks</b></a>
@@ -140,7 +140,7 @@ Dendrites, axons, cell body might not be that familiar terms for everyone; howev
 
 *"The idea is that the synaptic strengths (the weights w) are learnable and control the strength of influence ... dendrites carry the signal to the cell body where they all get summed. If the final sum is above a certain threshold, the neuron can fire, sending a spike along its axon. In the computational model, we assume that the precise timings of the spikes do not matter and that only the frequency of the firing communicates information. Based on this rate code interpretation, we model the firing rate of the neuron with an activation function f."* - CS231-Stanford
 
-![image](/image/fnn_concept.png)
+![image](/plots/fnn_concept.png)
 
 
 ---
@@ -152,60 +152,9 @@ Dendrites, axons, cell body might not be that familiar terms for everyone; howev
 # ============================================================
 # ============================================================
 
-## 2. <a id = 'Text_Normalization'>Text Normalization</a> 
-Text preprocessing and normalization is a crucial step in Natural Language Processing (NLP) and it means converting the text into the standard form. Examples of text preprossessing include [[ref]](https://towardsdatascience.com/text-preprocessing-for-data-scientist-3d2419c8199d):
-
-- *Lower casing*
-- *Removing puctuations*
-- *Revoving special characters*
-- *Handeling emojis and emoticons (removing them or replacing them with words)* 
-- *Stop word removals*
-- *Common word removal*
-- *Rare word removal*
-- *Spelling correction* 
-- *Removing URLs and HTML tags* 
-- *Tokenization* 
-- *Stemming* 
-- *Lemmatization* 
-
-Some of these methods and their python tools will be discussed in detail in the following.
-
-### 2.1. <a id = 'Tokenization'> Tokenization  </a> 
-This is the first step in text processing and cleaning which consists of separating or tokenizing words from the text [[ref](https://web.stanford.edu/~jurafsky/slp3/)]. Although English words are separated by whitespaces, there are many cases like "San Francisco" which should be treated as a single word. On the other hand, contractions such as "I'm" are another example that needs to be treated separately. Tokenization can be divided into two steps: Paragraph to a sentence or *sentence tokenization*, and sentence to words or *Word Tokenization*. In this project, we implemented the following tools from `NLTK` for this purpose:
-
-`from nltk.tokenize import sent_tokenize, word_tokenize`  
-
-As a part of tokenization, the following methods might be utilized as well [3]: 
-- Bigrams: Tokens consist of two consecutive words known as bigrams.
-- Trigrams: Tokens consist of three consecutive words known as trigrams.
-- Ngrams: Tokens consist of ’N’ number of consecutive words known as n-grams
-In this project, processed word tokens are embedded into a list and N-gram assessment is done using the following scripts:
-
-`(pd.Series(nltk.ngrams(words, ngram_value)).value_counts())`  
-
-in which, `ngram_value` is 2, 3, 4, 5, etc. For detailed discussion, check [[ref](https://towardsdatascience.com/from-dataframe-to-n-grams-e34e29df3460)]. Note that in the tokenization, *stopwords* such as "the", "an", "at" will be eliminated as well using the following script:
-
-`from nltk.corpus import stopwords`\
-`stopwords.words('english')`
 
 
 
-
-### 2.2. <a id = 'Lemmatization'>  Lemmatization </a> 
-Another phase for processing the text is lemmatization which includes the simplification of words based on their root. For example, *spoke*, and *spoken* are all forms of the verb *speak*.
-
-`from nltk.stem import WordNetLemmatizer`\
-`lemmatizer = WordNetLemmatizer()`
-
-
-### 2.3. <a id = 'Stemming'> Stemming </a> 
-Stemming is the in-depth version of lemmatization in which all words are converted to their stem root. For instance, *computes*, *computing*, *computer*, *computational* are all from the same root "compute"
-
-`from nltk.stem.porter import PorterStemmer`\
-`p_stemmer = PorterStemmer()`
-
-
-A good overview the the text processing/standarilizing can be found at [[ref](https://medium.com/@jeevanchavan143/nlp-tokenization-stemming-lemmatization-bag-of-words-tf-idf-pos-7650f83c60be) and [ref](https://towardsdatascience.com/text-preprocessing-for-data-scientist-3d2419c8199d)].
 
 
 
