@@ -4,6 +4,7 @@
 *.key
 datasets/
 outputs/
+Private_NOTpushed/
 
 ###################
 *.com
