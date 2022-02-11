@@ -131,7 +131,7 @@ In the entire project, all posts are split into train and testing sets with the 
 <br></br>
 
      
-# <a id = 'Conclusion'>Conclusion</b>
+<!-- # <a id = 'Conclusion'>Conclusion</b>
 
 Random Forest is found to be the best statistical algorithm for classification because of the following reasons:
 - Provides the highest accuracy scores, ~99% and ~96% for training and testing datasets 
@@ -145,7 +145,7 @@ In addition, this model is…..
 - Optimizable coefficients to reduce variance and bias
 - Capable to use different generalization methods i.e., Lasso, Ridge, ElasticNet
 - Tunable parameters, solvers, and penalty functions for multiple cases 
-- Works best with both large and small datasets
+- Works best with both large and small datasets -->
 
 
 
