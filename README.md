@@ -31,9 +31,9 @@ transcriptomes. Critically speaking, machine learning provides powerful statisti
     	- [1. Random Forest](#RandomForest)	
     	- [2. Neural Networks](#NeuralNetworks)	
     - [Results](#Results)    
-    - [Conclusion](#Conclusion)
+<!--     - [Conclusion](#Conclusion)
     - [Recommendations](#Recommendations)
-    - [References](#references)
+    - [References](#references) -->
 
 
 
