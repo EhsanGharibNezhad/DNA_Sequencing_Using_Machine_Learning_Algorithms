@@ -145,29 +145,10 @@ Dendrites, axons, cell body might not be that familiar terms for everyone; howev
 
 ---
 
+# <a id = 'modeling_methodology'>3. Modeling Methodology to Classify Gene Family Classes</a>
 
 
-# ============================================================
-# ============================================================
-# ============================================================
-# ============================================================
-
-
-
-
-
-
-
-# <a id = 'modeling_methodology'>3. Modeling Methodology to Label Subreddit Posts</a>
-
-
-## 3.1 Logestic Regression
-In ordinary least squares linear regression (often just referred to as OLS), we try to predict some response variable (y) from at least one independent variable (x). In contrast, 
-Logistic regression deals with categories and gives us the probabilities of being in each class.
-For logistic regression, that specific link function that transforms ("bends") our line is known as the logit link.
-
-
-## 3.2 Classification and Regression Trees (CART) 
+## 3.1 Classification and Regression Trees (CART) 
 Decision Tree can be used to predict the class (discrete) (AKA. *Classification Tree*) or to infer continuous features such as house price which is called *Regression Tree*. The decision tree has the same analogy as the 20-question game to make decisions similar to how humans make decisions. It is a supervised machine learning algorithm that uses a set of rules for classification. The following library from **sklearn** is used to implement this model:
 
 `from sklearn.tree import DecisionTreeClassifier`
@@ -222,59 +203,32 @@ Random forests differ from bagging decision trees in only one way: they use a mo
 
 
 
+# <a id = 'Results'>6. Results</b>
 
-
-
-
-## 3.5 Extremely Randomized Trees (ExtraTrees)
-
-
-*ExtraTrees* has an extra feature to even more randomize (and thus de-correlation) decision tress compared to the conventional *Random Forest* method. In the *ExtraTrees* method, the features at the *root node* and *leaf nodes* are selected randomly without utilizing *Gini impurity* or *information gain*. In addition, the split in each node is determined by selecting a subset of randomly selected features within that subset size (i.e., usually the square root of the total features). The following library is used for this method:
-
-`from sklearn.ensemble import ExtraTreesClassifie`
-
-
-
-## 3.6 Naïve Bayes
-
-Naive Bayes classifiers rely on the Bayes theorem which is a conditional theory. 
- [Conditional theory](https://www.statisticshowto.com/probability-and-statistics/probability-main-index/bayes-theorem-problems/) is the probability of an event happening, given that it has some relationship to one or more other events. For example, your probability of the temperature given that is connected to the sunlight, humidity, and altitude. 
-Another example of Bayes theorem is in medical research cases such as the probability of having kidney disease if they are alcoholic [[ref]](https://www.statisticshowto.com/probability-and-statistics/probability-main-index/bayes-theorem-problems/). 
-
-In conditional theory, P(A|B) is the probability of event A given that event B has occurred. Since we are assuming that A and B are independent, we can write their joint probability of A and B as P(A and B) = P(B and A). Note that the joint probability of X and Y or P(X ∩ Y) can be written as P(X). P(Y|X). Therefore,  P(A and B) = P(B and A) will be written as:
-
-<img src="https://latex.codecogs.com/svg.image?P(A)&space;P(B|A)&space;=&space;P(B)&space;P(A|B)" title="P(A) P(B|A) = P(B) P(A|B)" /> 
-
-Rearranging it leads to Bayes' theorem.  
-
-
-<img src="https://latex.codecogs.com/svg.image?P(A|B)&space;=&space;\frac{P(B|A)P(A)}{P(B)}" title="P(A|B) = \frac{P(B|A)P(A)}{P(B)}" /> 
-
-
-
-
-**Naïve Bayes** is a supervised machine learning algorithm that could be used for classification problems. However, in comparison with another classifier, this model assumes that features are independent of each other, and there is no correlation between them [[ref]](https://towardsdatascience.com/naive-bayes-classifier-explained-50f9723571ed). This is why it is called *naïve*.  **Naïve Bayes Classifier** needs to store probability distribution for each feature. The type of distributions depends on the feature properties, including:
-
-1. **Bernoulli distribution**: for binary features (e.g., rainy day: Yes or No?)  
-2. **Multinomial distribution**: for discrete features (e.g., word counts)  
-3. **Gaussian distribution**: for continuous features (e.g., House price)  
-
-Naive Bayes classifiers are relativity fast comparing to *Random Forest*, but the assumption of independent features imposes some inaccuracy to the results. The following library is implemented to use this model:
-
-` from sklearn.naive_bayes import GaussianNB, BernoulliNB, MultinomialNB `
-
-
-
-
-# 4. <a id = 'sentiment'> Sentiment Analysis: Reddit Posts </a> 
-Sentiment analysis is the study of the text sentiment, the positive or negative orientation that a writer expresses toward some topics. For instance, all product review systems such as IMDB have numerous amount of words for each movie, some positive, some negatives, and some neutral. The main goal is to employ some words such as "great", "disappointing", and many others as indicators to conclude and rate the text's sentiment. In this project, *VADER* ( Valence Aware Dictionary for Sentiment Reasoning) is a model used for text sentiment analysis that is sensitive to both polarities (positive/negative) and intensity (strength) of emotion [[ref](https://towardsdatascience.com/sentimental-analysis-using-vader-a3415fef7664)].
-The following library is employed to load *VADER*:
-
-`from nltk.sentiment.Vader import SentimentIntensityAnalyzer`
+In the entire project, all posts are split into train and testing sets with the proportion of 75% and 25%, respectively. For each dataset, accuracy, precision, recall, F1 score as well as their false positive, false negative, and true positive and negative values are reported. The following equations are showing their definitions [[ref](https://developers.google.com/machine-learning/crash-course/classification/precision-and-recall)]:
 
 <br></br>
-<img src="./plots/sentiment_analysis_vader.png" alt="drawing" width="800"/>
+<img src="/plots/compare_knn_RandomForest_results.png" alt="drawing" width="800"/>
 <br></br>
+
+
+<br></br>
+<img src="/plots/FNNs_results.png" alt="drawing" width="800"/>
+<br></br>
+
+
+# ============================================================
+# ============================================================
+# ============================================================
+# ============================================================
+
+
+
+
+
+
+
+
 
 
 
@@ -287,13 +241,6 @@ Posts in Covid12Positive have more words as the following figure shows.
 <img src="./plots/eda.png" alt="drawing" width="800"/>
 <br></br>
     
-# <a id = 'Results'>6. Results</b>
-
-In the entire project, all posts are split into train and testing sets with the proportion of 75% and 25%, respectively. For each dataset, accuracy, precision, recall, F1 score as well as their false positive, false negative, and true positive and negative values are reported. The following equations are showing their definitions [[ref](https://developers.google.com/machine-learning/crash-course/classification/precision-and-recall)]:
-
-<br></br>
-<img src="./plots/defination_equations_accuracy_precision.png" alt="drawing" width="800"/>
-<br></br>
 
 ## <a id = '6_1'> 6.1 Compare Metric Scores of Different Models</b> 
 
