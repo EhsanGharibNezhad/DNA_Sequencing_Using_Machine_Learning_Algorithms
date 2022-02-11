@@ -133,14 +133,14 @@ In the entire project, all posts are split into train and testing sets with the 
      
 # <a id = 'Conclusion'>Conclusion</b>
 
-Logistic Regression is found to be the best model for classification because of the following reasons: 
+Random Forest is found to be the best statistical algorithm for classification because of the following reasons:
 - Provides the highest accuracy scores, ~99% and ~96% for training and testing datasets 
 - Works great with ultra-imbalanced samples (~93% vs. ~7%)
 - High rates for true positive (91.06% out of 93%) and true negative (5.5% out of 7%)
 - Low scores for false positive (1.57%) and false-negative (1.87%)
 - High scores for precision and recall (~98%) 
 
-In addition, this model is….. 
+In addition, this model is…..
 - Interpretable 
 - Optimizable coefficients to reduce variance and bias
 - Capable to use different generalization methods i.e., Lasso, Ridge, ElasticNet
