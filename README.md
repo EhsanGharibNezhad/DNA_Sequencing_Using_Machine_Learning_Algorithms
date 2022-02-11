@@ -27,14 +27,9 @@ transcriptomes. Critically speaking, machine learning provides powerful statisti
 
     - [Data Dictionary](#ddict)
     - [Background](#Background)
-    - [1. Data Scarpping: Application Programming Interface](#api)
-   	- [2. Text Normalization](#Text_Normalization)
-    	- [2.1. Tokenization](#Tokenization)
-    	- [2.2. Lemmatization](#Lemmatization)
-    	- [2.3. Stemming](#Stemming)
-    - [Methodology](#Methodology)    
-    	- [Sentiment Analysis](#Sentiment)	
-    - [Exploratory Data Analysis](#eda)    
+    - [Statistical Models: Methodology and Concepts](#ModelingMethodology)    
+    	- [1. Random Forest](#RandomForest)	
+    	- [2. Neural Networks](#NeuralNetworks)	
     - [Results](#Results)    
     - [Conclusion](#Conclusion)
     - [Recommendations](#Recommendations)
@@ -47,43 +42,26 @@ transcriptomes. Critically speaking, machine learning provides powerful statisti
 ## notebooks/ <br />
 
 *Setp 1: Exploratory Data Analysis:*\
-&nbsp; &nbsp; &nbsp; __ [3__ExploratoryDataAnalysis_EDA.ipynb](notebooks/3__ExploratoryDataAnalysis_EDA.ipynb)<br />
+&nbsp; &nbsp; &nbsp; __ [1__Exploratory_Data_Analysis_EDA.ipynb](notebooks/1__Exploratory_Data_Analysis_EDA.ipynb)<br />
 
-*Setp 2: Traditional Machine Learning Models: Classifiers*\
-&nbsp; &nbsp; &nbsp; __ [4-1__model_Logestic_Regression.ipynb](notebooks/4-1__model_Logestic_Regression.ipynb)<br />
-&nbsp; &nbsp; &nbsp; __ [4-2__model_Logestic_Regression-Imbalanced.ipynb](notebooks/4-2__model_Logestic_Regression-Imbalanced.ipynb)<br />
-&nbsp; &nbsp; &nbsp; __ [4-3__model_Decision_Trees.ipynb](notebooks/4-3__model_Decision_Trees.ipynb)<br />
-&nbsp; &nbsp; &nbsp; __ [4-4__model_Bootstrapping_Bagging.ipynb](notebooks/4-4__model_Bootstrapping_Bagging.ipynb)<br />
-&nbsp; &nbsp; &nbsp; __ [4-5__model_Random_Forests.ipynb](notebooks/4-5__model_Random_Forests.ipynb)<br />
-&nbsp; &nbsp; &nbsp; __ [4-6__model_Extremely_Randomized_Trees__ExtraTrees.ipynb](notebooks/4-6__model_Extremely_Randomized_Trees__ExtraTrees.ipynb)<br />
-&nbsp; &nbsp; &nbsp; __ [4-7__model_Adaboost.ipynb](notebooks/4-7__model_Adaboost.ipynb)<br />
-&nbsp; &nbsp; &nbsp; __ [4-8__model_Gradient_Boosting.ipynb](notebooks/4-8__model_Gradient_Boosting.ipynb)<br />
-&nbsp; &nbsp; &nbsp; __ [4-9__model_xgbooster.ipynb](notebooks/4-9__model_xgbooster.ipynb)<br />
-&nbsp; &nbsp; &nbsp; __ [4-10__model_Naive_Bayes.ipynb](notebooks/4-10__model_Naive_Bayes.ipynb)<br />
-&nbsp; &nbsp; &nbsp; __ [4-11__model_Support_Vector_Machines_SVMs.ipynb](notebooks/4-11__model_Support_Vector_Machines_SVMs.ipynb)<br />
+*Setp 2: DNA Sequence Dataset Processing:*\
+&nbsp; &nbsp; &nbsp; __ [2__Generate_kmer_dataset.ipynb](notebooks/2__Generate_kmer_dataset.ipynb)<br />
+
+*Setp 3: Traditional Machine Learning Models: Classifiers*\
+&nbsp; &nbsp; &nbsp; __ [3__KNeighborsClassifier.ipynb](notebooks/3__KNeighborsClassifier.ipynb)<br />
+&nbsp; &nbsp; &nbsp; __ [4__RandomForest.ipynb](notebooks/4__RandomForest.ipynb)<br />
 
 
-*Setp 3: Modern Machine Learning tools: Classifiers*\
-&nbsp; &nbsp; &nbsp; __ [5-1__sentiment_analysis_VADER.ipynb](notebooks/5-1__sentiment_analysis_VADER.ipynb)<br />
+*Setp 4: Feed-Forward Neural Networks: Classifiers*\
+&nbsp; &nbsp; &nbsp; __ [5__FeedForward_Neural_Networks.ipynb](notebooks/5__FeedForward_Neural_Networks.ipynb)<br />
 />
 
 
 
 ## datasets/<br />
 *Unprocessed data collected from sub Reddits:*\
-&nbsp; &nbsp; &nbsp; __ [preprocessed_covid19positive_reddit_LAST.csv](datasets/preprocessed_covid19positive_reddit_LAST.csv)<br />
-&nbsp; &nbsp; &nbsp; __ [preprocessed_df_PandemicPreps_reddit_LAST.csv](datasets/preprocessed_df_PandemicPreps_reddit_LAST.csv)<br />
+&nbsp; &nbsp; &nbsp; __ [human.txt](datasets/human.txt)<br />
 
-
-*Modeling results: Accuracy, Precision, Recall, Confusion Matrix:*\
-&nbsp; &nbsp; &nbsp; __ [models_metrics_report_confusionMatrix.csv](datasets/models_metrics_report_confusionMatrix.csv)<br />
-&nbsp; &nbsp; &nbsp; __ [models_metrics_report_precision_recall.csv](datasets/models_metrics_report_precision_recall.csv)<br />
-&nbsp; &nbsp; &nbsp; __ [models_metrics_report_accuracy.csv](datasets/models_metrics_report_accuracy.csv)<br />
-
-
-[presentation.pdf](presentation.pdf)<br />
-
-[ReadMe.md](ReadMe.md)<br />
 
 ---
 ---
@@ -116,25 +94,19 @@ DNA (Deoxyribonucleic acid) sequencing is the process of determining the nucleic
 ---
 # <a id = 'ModelingMethodology'>Statistical Models: Methodology and Concepts</b></a>
 
-## <a id = '1Multiclassclassification'>1. Multiclass classification</b></a>
 
-Multiclass classification is a common problem in machine learning and includes targets with more than two classes. In case that the target has two classes, then it is named binary classification. In the following, I will provide background information about the classification methodology:
-1. One-Vs-Rest (OvR)
-2. One-Vs-One (i.e., OvO)
-
-![image](/plots/multiclassification_concept.png)
-
-
-## <a id = 'RandomForest'>2. Random Forest</b></a>
+## <a id = 'RandomForest'>1. Random Forest</b></a>
 A random forest is a supervised machine learning algorithm and is a part of ensemble methods. It is known for having lower overfitting issues than common decision trees because it creates a large ensemble of bootstrap trees and aggregates them. In this blog, I will discuss the fundamental backgrounds to better understand both Random Forest Classifiers and regressors.
 
 In the bagging technique, all features get selected but the number of observations (or rows in the dataset) is different. Therefore, there is still some correlation between the bootstrap trees which results in high variance. Random Forest breaks this correlation by randomly selecting the features and not having all of them in all decision trees. Hence, Random Forest can be represented as a supervised machine learning algorithm that uses an enhanced version of the Bagging technique to create an ensemble of decision trees with low correlation.
+
+`from sklearn.ensemble import RandomForestClassifier`
 
 
 ![image](/plots/RandomForest_concept.png)
 
 
-## <a id = 'NeuralNetworks'>3. Neural Networks</b></a>
+## <a id = 'NeuralNetworks'>2. Neural Networks</b></a>
 
 Dendrites, axons, cell body might not be that familiar terms for everyone; however, the complexity of the neural networks in the brain could be a reasonable naive start to understanding the complexity of teaching a computer to solve problems. Here in this figure 4, the analogy between the signal transferring process and the deep neural network is depicted. 
 
@@ -143,67 +115,9 @@ Dendrites, axons, cell body might not be that familiar terms for everyone; howev
 ![image](/plots/fnn_concept.png)
 
 
----
-
-# <a id = 'modeling_methodology'>3. Modeling Methodology to Classify Gene Family Classes</a>
 
 
-## 3.1 Classification and Regression Trees (CART) 
-Decision Tree can be used to predict the class (discrete) (AKA. *Classification Tree*) or to infer continuous features such as house price which is called *Regression Tree*. The decision tree has the same analogy as the 20-question game to make decisions similar to how humans make decisions. It is a supervised machine learning algorithm that uses a set of rules for classification. The following library from **sklearn** is used to implement this model:
-
-`from sklearn.tree import DecisionTreeClassifier`
- 
-
-<!--- ### 3.2.1 Terminology
-- **Root Node**: What we see on top is known as the "root node," through which all of our observations are passed.
-- **Leaf Nodes**: At each of the "leaf nodes" (colored orange), we contain a subset of records that are as pure as possible.
-- A "parent" node is split into two or more "child" nodes. --->
-
-
-### 3.2.1 Gini impurity
-Gini impurity is a measure of how often a randomly chosen element from the set would be incorrectly labeled if it was randomly labeled according to the distribution of labels in the subset. The Gini impurity can be computed by summing the probability of a mistake in categorizing that item [[ref](https://en.wikipedia.org/wiki/Decision_tree_learning#Gini_impurity)]. In other words, **Gini impurity** is the probability that a randomly-chosen class will be labeled inaccurately, and is calculated by the following equation:
-
-
-<img src="https://latex.codecogs.com/svg.image?Gini&space;\&space;Index&space;=&space;1&space;-&space;\sum_{i=1}^{n}&space;(p_i)^2" title="Gini \ Index = 1 - \sum_{i=1}^{n} (p_i)^2" />
-
-where *p* is the probability of item *i*. *Gini impurity* is between 0 and 1, where 0 shows the lowest impurity and 1 is the highest one. Both *Classification* and *Regression Trees* implement *Gini coefficient* to select the *root node* as well as the *node splision*. More details can be found in [[ref](https://medium.com/analytics-steps/understanding-the-gini-index-and-information-gain-in-decision-trees-ab4720518ba8)].     
-
-
-
-
-
-
-## 3.3 Classification and Regression Trees including Bootstrap Aggregating (Bagging)  
-
-Although *Decision trees* are powerful machine learning models, they tend to learn highly irregular patterns (a.k.a. they overfit their training sets). *Bagging* (*bootstrap aggregating*) mitigates this problem by exposing different trees to different sub-samples of the training set. In this method, a set of bootstrapped samples (or ensemble, see the following flowchart) is generated with the inclusion of replacement. Consequently, a set of decision trees is generated in order to account for the variability and reduce the overfitting issue (or to improve the variance). The following library is used from **sklearn**to implement this approach:
-
-`from sklearn.ensemble import BaggingClassifier`\
-`BaggingClassifier(random_state = 42)`
-
-
-
-## 3.4 Random Forest
-
-With bagged decision trees, we generate many different trees on pretty similar data. These trees are strongly correlated with one another. Because these trees are correlated with one another, they will have a high variance. Looking at the variance of two random variables X and Y, if X and Y are highly correlated, then the variance will about as high as we'd see with individual decision trees. By "de-correlating" our trees from one another, we can drastically reduce the variance of our model. That's the difference between bagged decision trees and random forests! 
-
-The following equations articulate this correlation and variance in simple math [[ref](https://www.probabilitycourse.com/chapter5/5_3_1_covariance_correlation.php)]:
-
-<img src="https://latex.codecogs.com/svg.image?Var(X&plus;Y)=Var(X)&plus;Var(Y)&plus;2Cov(X,Y)" title="Var(X+Y)=Var(X)+Var(Y)+2Cov(X,Y)" />
-
-where the the covariance between X and Y is defined as:
-
-<img src="https://latex.codecogs.com/svg.image?Cov(X,Y)=&space;E[(X-EX)(Y-EY)]=E[XY]-(EX)(EY)" title="Cov(X,Y)= E[(X-EX)(Y-EY)]=E[XY]-(EX)(EY)" />
-
-where E[X] and E[Y] is the expected (or mean) value of X and Y.
-
-Random forests differ from bagging decision trees in only one way: they use a modified tree learning algorithm that selects, at each split in the learning process, a random subset of the features. This process is sometimes called the random subspace method. The following library is implemented in this model:
-
-`from sklearn.ensemble import RandomForestClassifier`
-
-
-
-
-# <a id = 'Results'>6. Results</b>
+# <a id = 'Results'>Results</b>
 
 In the entire project, all posts are split into train and testing sets with the proportion of 75% and 25%, respectively. For each dataset, accuracy, precision, recall, F1 score as well as their false positive, false negative, and true positive and negative values are reported. The following equations are showing their definitions [[ref](https://developers.google.com/machine-learning/crash-course/classification/precision-and-recall)]:
 
@@ -216,62 +130,6 @@ In the entire project, all posts are split into train and testing sets with the 
 <img src="/plots/FNNs_results.png" alt="drawing" width="800"/>
 <br></br>
 
-
-# ============================================================
-# ============================================================
-# ============================================================
-# ============================================================
-
-
-
-
-
-
-
-
-
-
-
-
-
-# <a id = 'eda'> <b>5. Exploratory Data Analysis</b>
-Posts in Covid12Positive have more words as the following figure shows.
-
-<br></br>
-<img src="./plots/eda.png" alt="drawing" width="800"/>
-<br></br>
-    
-
-## <a id = '6_1'> 6.1 Compare Metric Scores of Different Models</b> 
-
-In the following figures, the accuracy, recall, precision, and F1-score for different models are represented. 
- 
-<br></br>
-<img src="./plots/results_compare_accuracy_all_models.png" alt="drawing" width="800"/>
-<br></br>
-
-<br></br>
-<img src="./plots/results_compare_precision_recall_all_models.png" alt="drawing" width="800"/>
-<br></br>
-
-
-<br></br>
-<img src="./plots/results_compare_accuracy_all_models.png" alt="drawing" width="800"/>
-<br></br>
-
-<br></br>
-<img src="./plots/results_compare_confusionMatrix_all_models.png" alt="drawing" width="800"/>
-<br></br>
-
----
----
-
-An overview of the final results are presented in the following infograph:
-
-
-<br></br>
-<img src="./plots/results_modeling_Logistic_regresssion.png" alt="drawing" width="800"/>
-<br></br>
      
 # <a id = 'Conclusion'>Conclusion</b>
 
